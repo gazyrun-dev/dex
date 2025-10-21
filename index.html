@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrexBanana 🍌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #F5F5F5;
+            --text-light: #111111;
+            --border-light: #111111;
+            --shadow-light: #111111;
+            --accent1-light: #FFD60A; /* Sunglow Yellow */
+            --accent2-light: #FF7B00; /* Safety Orange */
+            --accent3-light: #00C853; /* Emerald Green */
+            --error-light: #D50000;
+
+            --bg-dark: #111111;
+            --text-dark: #F5F5F5;
+            --border-dark: #F5F5F5;
+            --shadow-dark: #F5F5F5;
+            --accent1-dark: #FFD60A;
+            --accent2-dark: #FF7B00;
+            --accent3-dark: #00C853;
+            --error-dark: #FF5252;
+        }
+
+        .light-mode {
+            --bg-color: var(--bg-light);
+            --text-color: var(--text-light);
+            --border-color: var(--border-light);
+            --shadow-color: var(--shadow-light);
+            --accent1-color: var(--accent1-light);
+            --accent2-color: var(--accent2-light);
+            --accent3-color: var(--accent3-light);
+            --error-color: var(--error-light);
+        }
+
+        .dark-mode {
+            --bg-color: var(--bg-dark);
+            --text-color: var(--text-dark);
+            --border-color: var(--border-dark);
+            --shadow-color: var(--shadow-dark);
+            --accent1-color: var(--accent1-dark);
+            --accent2-color: var(--accent2-dark);
+            --accent3-color: var(--accent3-dark);
+            --error-color: var(--error-dark);
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 4px; }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes pulse {
+            50% { opacity: .5; }
+        }
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="light-mode antialiased">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
